@@ -1,0 +1,113 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Casting< Services</title>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="Images/Casting_Services-removebg-preview.png" width="200px" height="200px"></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1>Welcome to Casting Services!</h1>
+      <p>We specialize in insulation and cladding work to meet your needs.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="service">
+        <img src="./Images/download (1).jpg" alt="Insulation Service">
+        <h3>Insulation</h3>
+        <p>We provide expert insulation services to ensure energy efficiency and thermal comfort in your buildings.</p>
+      </div>
+
+      <div class="service">
+        <img src="./Images/clad.jpg" alt="Cladding Service">
+        <h3>Cladding</h3>
+        <p>Our cladding solutions enhance the aesthetic appeal and protect your structures from external elements.</p>
+      </div>
+
+      <div class="service">
+        <img src="./Images/52.jpg" alt="Maintenance Service">
+        <h3>Maintenance</h3>
+        <p>Regular maintenance services to keep your insulation and cladding systems in optimal condition.</p>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="image-gallery">
+        <img src="gallery1.jpg" alt="Work Example 1">
+        <img src="gallery2.jpg" alt="Work Example 2">
+        <img src="gallery3.jpg" alt="Work Example 3">
+        <!-- Add more images as needed -->
+      </div>
+    </section>
+  </main>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+      <p><strong>Location:</strong> Samshaan Gali Ke samne</p>
+      <p><strong>Contact Number:</strong> +91 123456789</p>
+      <p><strong>Email:</strong> Gadekipunch@gmail.com</p>
+    </div>
+
+    <form action="/submit" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Contact us at CIDAAYEGI@gmail.com</p>
+    <p>&copy; 2024 Your Casting Services. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });               
+    });
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+
+      if (!nameInput.value || !emailInput.value || !messageInput.value) {
+        alert('Please fill out all fields');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</body>
+</html>
